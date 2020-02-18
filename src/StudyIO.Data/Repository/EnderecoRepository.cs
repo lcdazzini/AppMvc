@@ -3,8 +3,6 @@ using StudyIO.Business.Interfaces;
 using StudyIO.Business.Models;
 using StudyIO.Data.Context;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace StudyIO.Data.Repository
