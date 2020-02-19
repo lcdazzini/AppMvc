@@ -17,6 +17,7 @@ using Microsoft.AspNetCore.Mvc;
 using StudyIO.Data.Context;
 using StudyIO.Data.Repository;
 using StudyIO.Business.Interfaces;
+using AutoMapper;
 
 namespace StudyIO.App
 {
@@ -50,6 +51,8 @@ namespace StudyIO.App
 
 			services.AddControllersWithViews();
 			services.AddRazorPages();
+
+			services.AddAutoMapper(typeof(Startup));
 
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 

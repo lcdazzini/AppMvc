@@ -1,6 +1,6 @@
 using System;
 
-namespace StudyIO.App.Models
+namespace StudyIO.App.ViewModels
 {
 	public class ErrorViewModel
 	{
