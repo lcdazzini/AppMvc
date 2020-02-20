@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using StudyIO.App.ViewModels;
 
 namespace StudyIO.App.Data
 {
@@ -12,5 +13,6 @@ namespace StudyIO.App.Data
 			: base(options)
 		{
 		}
+		public DbSet<StudyIO.App.ViewModels.ProdutoViewModel> ProdutoViewModel { get; set; }
 	}
 }

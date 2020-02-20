@@ -6,6 +6,7 @@ namespace StudyIO.App.ViewModels
 {
 	public class EnderecoViewModel
 	{
+		[Key]
 		public Guid FornecedorId { get; set; }
 
 		[Required(ErrorMessage = "O campo {0} é obrigatório")]

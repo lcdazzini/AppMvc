@@ -1,5 +1,3 @@
-using System;
-
 namespace StudyIO.App.ViewModels
 {
 	public class ErrorViewModel
