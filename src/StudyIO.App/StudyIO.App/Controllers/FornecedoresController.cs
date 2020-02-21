@@ -30,7 +30,7 @@ namespace StudyIO.App.Controllers
 		public async Task<IActionResult> Details(Guid id)
 		{
 
-			var fornecedorViewModel = await _fornecedorRepository.ObterFornecedorEndereco(id);
+			var fornecedorViewModel = await ObterFornecedorEndereco(id);
 
 			if (fornecedorViewModel == null)
 			{

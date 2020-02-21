@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using StudyIO.App.Data;
 using StudyIO.App.ViewModels;
 using StudyIO.Business.Interfaces;
 using StudyIO.Business.Models;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace StudyIO.App.Controllers
 {
@@ -46,7 +42,6 @@ namespace StudyIO.App.Controllers
             return View(produtoViewModel);
         }
 
-        // GET: Produtos/Create
         public async Task<IActionResult> Create()
         {
             var produtoViewModel = await PopularFornecedores(new ProdutoViewModel());
@@ -64,7 +59,6 @@ namespace StudyIO.App.Controllers
             return View(produtoViewModel);
         }
 
-        // GET: Produtos/Edit/5
         public async Task<IActionResult> Edit(Guid id)
         {
             var produtoViewModel = await ObterProduto(id);
