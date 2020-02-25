@@ -1,4 +1,6 @@
 using AutoMapper;
+using KissLog.Apis.v1.Listeners;
+using KissLog.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -71,6 +73,13 @@ namespace StudyIO.App
 			app.UseGlobalizationConfiguration();
 
 			app.UseRouting();
+
+			app.UseKissLogMiddleware(options => {
+				options.Listeners.Add(new KissLogApiListener(new KissLog.Apis.v1.Auth.Application(
+					Configuration["KissLog.OrganizationId"],
+					Configuration["KissLog.ApplicationId"])
+				));
+			});
 
 			app.UseEndpoints(endpoints =>
 			{

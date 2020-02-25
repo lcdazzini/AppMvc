@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.DataAnnotations;
+﻿using KissLog;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.DataAnnotations;
 using Microsoft.Extensions.DependencyInjection;
 using StudyIO.App.Extensions;
 using StudyIO.Business.Interfaces;
@@ -22,6 +24,9 @@ namespace StudyIO.App.Configuration
 			services.AddScoped<INotificador, Notificador>();
 			services.AddScoped<IFornecedorService, FornecedorService>();
 			services.AddScoped<IProdutoService, ProdutoService>();
+
+			services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+			services.AddScoped(context => Logger.Factory.Get());
 
 			return services;
 		}
