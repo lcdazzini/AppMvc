@@ -21,6 +21,8 @@ namespace StudyIO.App.Configuration
 				o.ModelBindingMessageProvider.SetValueMustBeANumberAccessor(x => "O campo deve ser numérico.");
 				o.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(x => "Este campo precisa ser preenchido.");
 
+				o.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()); 
+
 			}).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
 
 			return services;
