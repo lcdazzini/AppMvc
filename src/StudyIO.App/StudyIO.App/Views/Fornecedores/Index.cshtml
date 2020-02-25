@@ -1,10 +1,13 @@
 ﻿@model IEnumerable<StudyIO.App.ViewModels.FornecedorViewModel>
+@using StudyIO.App.Extensions
 
 @{
     ViewData["Title"] = "Lista de Fornecedores";
 }
 
 <h1>@ViewData["Title"]</h1>
+
+<vc:summary></vc:summary>
 
 <p>
     <a class="btn btn-info" asp-action="Create">Novo Fornecedor</a>
@@ -32,7 +35,7 @@
                     @Html.DisplayFor(modelItem => item.Nome)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Documento)
+                    @this.FormataDocumento(item.TipoFornecedor, item.Documento)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Ativo)

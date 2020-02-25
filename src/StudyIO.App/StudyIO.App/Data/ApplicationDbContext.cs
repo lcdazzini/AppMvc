@@ -13,6 +13,6 @@ namespace StudyIO.App.Data
 			: base(options)
 		{
 		}
-		public DbSet<StudyIO.App.ViewModels.ProdutoViewModel> ProdutoViewModel { get; set; }
+		//public DbSet<StudyIO.App.ViewModels.ProdutoViewModel> ProdutoViewModel { get; set; }
 	}
 }

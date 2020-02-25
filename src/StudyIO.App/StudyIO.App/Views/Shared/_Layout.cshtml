@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@System.Globalization.CultureInfo.CurrentUICulture
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -43,9 +44,10 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - StudyIO.App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; @System.DateTime.Now.Year - Study.IO - <email email-domain="gmail.com">lcdazzini</email> - <email>lcdazzini.work</email>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
