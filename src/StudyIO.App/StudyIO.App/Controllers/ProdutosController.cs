@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using StudyIO.App.Extensions;
 using StudyIO.App.ViewModels;
 using StudyIO.Business.Interfaces;
 using StudyIO.Business.Models;
@@ -12,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace StudyIO.App.Controllers
 {
+    [Authorize]
     public class ProdutosController : BaseController
     {
         private readonly IProdutoRepository _produtoRepository;
@@ -53,7 +55,7 @@ namespace StudyIO.App.Controllers
             return View(produtoViewModel);
         }
 
-        //[ClaimsAuthorize("Produto", "Adicionar")]
+        [ClaimsAuthorize("Produto", "Adicionar")]
         [Route("novo-produto")]
         public async Task<IActionResult> Create()
         {
@@ -61,7 +63,7 @@ namespace StudyIO.App.Controllers
             return View(produtoViewModel);
         }
 
-        //[ClaimsAuthorize("Produto", "Adicionar")]
+        [ClaimsAuthorize("Produto", "Adicionar")]
         [Route("novo-produto")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -86,7 +88,7 @@ namespace StudyIO.App.Controllers
             return RedirectToAction("Index");
         }
 
-        //[ClaimsAuthorize("Produto", "Editar")]
+        [ClaimsAuthorize("Produto", "Editar")]
         [Route("editar-produto/{id:guid}")]
         public async Task<IActionResult> Edit(Guid id)
         {
@@ -99,7 +101,7 @@ namespace StudyIO.App.Controllers
             return View(produtoViewModel);
         }
 
-        //[ClaimsAuthorize("Produto", "Editar")]
+        [ClaimsAuthorize("Produto", "Editar")]
         [Route("editar-produto/{id:guid}")]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -137,7 +139,7 @@ namespace StudyIO.App.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //[ClaimsAuthorize("Produto", "Excluir")]
+        [ClaimsAuthorize("Produto", "Excluir")]
         [Route("excluir-produto/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
@@ -151,7 +153,7 @@ namespace StudyIO.App.Controllers
             return View(produtoViewModel);
         }
 
-        //[ClaimsAuthorize("Produto", "Excluir")]
+        [ClaimsAuthorize("Produto", "Excluir")]
         [Route("excluir-produto/{id:guid}")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
